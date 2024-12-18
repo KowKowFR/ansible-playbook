@@ -1,0 +1,17 @@
+- name: Allow DNS traffic on all servers
+  hosts: all
+  tasks:
+    - name: Allow DNS traffic (port 53 - TCP/UDP)
+      win_firewall_rule:
+        name: Allow DNS
+        dir: in
+        action: allow
+        protocol: TCP
+        localport: 53
+      - name: Allow DNS traffic (port 53 - TCP/UDP)
+        win_firewall_rule:
+          name: Allow DNS
+          dir: in
+          action: allow
+          protocol: UDP
+          localport: 53

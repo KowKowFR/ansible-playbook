@@ -1,0 +1,10 @@
+- name: Allow SMTP traffic on all servers
+  hosts: all
+  tasks:
+    - name: Allow SMTP traffic (port 25)
+      win_firewall_rule:
+        name: Allow SMTP
+        dir: in
+        action: allow
+        protocol: TCP
+        localport: 25

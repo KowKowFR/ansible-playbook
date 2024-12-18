@@ -1,0 +1,6 @@
+- name: Display complete network information on all servers
+  hosts: all
+  tasks:
+    - name: Run `ipconfig /all` on Windows
+      win_command:
+        cmd: ipconfig /all

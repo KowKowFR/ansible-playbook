@@ -1,0 +1,6 @@
+- name: Restart the server on all servers
+  hosts: all
+  tasks:
+    - name: Restart the computer
+      win_command:
+        cmd: shutdown /r /t 0

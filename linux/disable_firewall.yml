@@ -1,0 +1,8 @@
+- name: Disable the firewall on all Linux servers
+  hosts: all
+  tasks:
+    - name: Disable firewalld
+      ansible.builtin.systemd:
+        name: firewalld
+        state: stopped
+        enabled: no

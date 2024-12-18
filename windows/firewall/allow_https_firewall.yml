@@ -1,0 +1,10 @@
+- name: Allow HTTPS traffic on all servers
+  hosts: all
+  tasks:
+    - name: Allow HTTPS traffic (port 443)
+      win_firewall_rule:
+        name: Allow HTTPS
+        dir: in
+        action: allow
+        protocol: TCP
+        localport: 443

@@ -1,0 +1,6 @@
+- name: Rename the server on all servers
+  hosts: all
+  tasks:
+    - name: Rename the computer to `NewServerName`
+      win_command:
+        cmd: Rename-Computer -NewName "NewServerName" -Restart

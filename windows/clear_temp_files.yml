@@ -1,0 +1,6 @@
+- name: Clear temporary files on all servers
+  hosts: all
+  tasks:
+    - name: Run `Cleanmgr` to clear temporary files
+      win_command:
+        cmd: Cleanmgr /sageset:65535 /sagerun:65535

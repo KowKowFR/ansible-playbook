@@ -1,0 +1,10 @@
+- name: Allow POP3 traffic on all servers
+  hosts: all
+  tasks:
+    - name: Allow POP3 traffic (port 110)
+      win_firewall_rule:
+        name: Allow POP3
+        dir: in
+        action: allow
+        protocol: TCP
+        localport: 110

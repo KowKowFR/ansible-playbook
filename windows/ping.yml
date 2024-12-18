@@ -1,0 +1,6 @@
+- name: Test network connectivity with `ping` on all servers
+  hosts: all
+  tasks:
+    - name: Run `ping` on Google.com
+      win_command:
+        cmd: ping google.com -n 4

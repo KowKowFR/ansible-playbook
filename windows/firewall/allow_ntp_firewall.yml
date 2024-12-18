@@ -1,0 +1,10 @@
+- name: Allow NTP traffic on all servers
+  hosts: all
+  tasks:
+    - name: Allow NTP traffic (port 123 - UDP)
+      win_firewall_rule:
+        name: Allow NTP
+        dir: in
+        action: allow
+        protocol: UDP
+        localport: 123

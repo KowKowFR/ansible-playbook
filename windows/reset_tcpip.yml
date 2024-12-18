@@ -1,0 +1,6 @@
+- name: Reset TCP/IP settings and reset the IP stack on all servers
+  hosts: all
+  tasks:
+    - name: Run `netsh int ip reset` on Windows
+      win_command:
+        cmd: netsh int ip reset

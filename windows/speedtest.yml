@@ -1,0 +1,6 @@
+- name: Test the speed of the Internet connection on all servers
+  hosts: all
+  tasks:
+    - name: Run `speedtest-cli` via PowerShell
+      win_powershell:
+        code: Invoke-SpeedTest

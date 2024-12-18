@@ -1,0 +1,6 @@
+- name: Trace the path to a server on all servers
+  hosts: all
+  tasks:
+    - name: Run `tracert` on Google.com
+      win_command:
+        cmd: tracert google.com

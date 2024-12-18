@@ -1,0 +1,10 @@
+- name: Configure Windows Firewall on all servers
+  hosts: all
+  tasks:
+    - name: Add an inbound rule for `SSH`
+      win_firewall_rule:
+        name: Allow SSH
+        dir: in
+        action: allow
+        protocol: TCP
+        localport: 22

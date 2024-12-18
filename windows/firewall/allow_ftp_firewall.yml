@@ -1,0 +1,10 @@
+- name: Allow FTP traffic on all servers
+  hosts: all
+  tasks:
+    - name: Allow FTP traffic (port 21)
+      win_firewall_rule:
+        name: Allow FTP
+        dir: in
+        action: allow
+        protocol: TCP
+        localport: 21

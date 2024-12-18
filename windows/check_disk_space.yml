@@ -1,0 +1,6 @@
+- name: Check disk space on all servers
+  hosts: all
+  tasks:
+    - name: Run `Get-Volume` to display disk space
+      win_command:
+        cmd: Get-Volume

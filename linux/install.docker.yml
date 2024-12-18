@@ -1,0 +1,16 @@
+- name: Install Docker on all Linux servers
+  hosts: all
+  tasks:
+    - name: Add Docker repository
+      ansible.builtin.apt_repository:
+        repo: "deb https://download.docker.com/linux/ubuntu focal stable"
+        state: present
+      - name: Install Docker
+      ansible.builtin.apt:
+        name: docker-ce
+        state: present
+      - name: Start Docker service
+      ansible.builtin.systemd:
+        name: docker
+        state: started
+        enabled: yes

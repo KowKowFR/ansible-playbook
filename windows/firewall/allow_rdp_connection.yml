@@ -1,0 +1,6 @@
+- name: Configure remote desktop on all servers
+  hosts: all
+  tasks:
+    - name: Enable remote desktop
+      win_command:
+        cmd: reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f

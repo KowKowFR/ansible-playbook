@@ -1,0 +1,6 @@
+- name: Set up automatic updates on all Linux servers
+  hosts: all
+  tasks:
+    - name: Enable unattended-upgrades
+      ansible.builtin.command:
+        cmd: dpkg-reconfigure --priority=low unattended-upgrades

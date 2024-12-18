@@ -1,0 +1,6 @@
+- name: Set system timezone to UTC on all Linux servers
+  hosts: all
+  tasks:
+    - name: Set timezone to UTC
+      ansible.builtin.command:
+        cmd: timedatectl set-timezone UTC

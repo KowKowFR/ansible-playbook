@@ -1,0 +1,7 @@
+- name: Install and configure a Windows feature on all servers
+  hosts: all
+  tasks:
+    - name: Install Telnet client
+      win_feature:
+        name: Telnet-Client
+        state: present

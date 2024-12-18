@@ -1,0 +1,10 @@
+- name: Set up a cron job to clean up temporary files weekly on all Linux servers
+  hosts: all
+  tasks:
+    - name: Add cron job for cleanup
+      ansible.builtin.cron:
+        name: cleanup-temp-files
+        minute: 0
+        hour: 3
+        day: "Sun"
+        job: "rm -rf /tmp/*"

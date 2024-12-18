@@ -1,0 +1,6 @@
+- name: Install Windows updates on all servers
+  hosts: all
+  tasks:
+    - name: Run `Windows Update`
+      win_command:
+        cmd: wusa /quiet /install /force /norestart

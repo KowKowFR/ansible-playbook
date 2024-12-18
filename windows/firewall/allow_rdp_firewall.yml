@@ -1,0 +1,10 @@
+- name: Allow RDP traffic on all servers
+  hosts: all
+  tasks:
+    - name: Allow RDP traffic (port 3389)
+      win_firewall_rule:
+        name: Allow RDP
+        dir: in
+        action: allow
+        protocol: TCP
+        localport: 3389

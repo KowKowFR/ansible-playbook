@@ -1,0 +1,10 @@
+- name: Update all packages on all Linux servers
+  hosts: all
+  tasks:
+    - name: Update all packages
+      ansible.builtin.yum:
+        name: '*'
+        state: latest
+      - name: Update all packages (for apt-based distros)
+      ansible.builtin.apt:
+        upgrade: dist

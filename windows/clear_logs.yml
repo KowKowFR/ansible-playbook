@@ -1,0 +1,9 @@
+- name: Clear event logs on all servers
+  hosts: all
+  tasks:
+    - name: Run `Clear-EventLog` to clear the application log
+      win_command:
+        cmd: Clear-EventLog -LogName "Application"
+    - name: Run `Clear-EventLog` to clear the system log
+      win_command:
+        cmd: Clear-EventLog -LogName "System"

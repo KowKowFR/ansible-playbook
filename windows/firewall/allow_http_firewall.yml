@@ -1,0 +1,10 @@
+- name: Allow HTTP traffic on all servers
+  hosts: all
+  tasks:
+    - name: Allow HTTP traffic (port 80)
+      win_firewall_rule:
+        name: Allow HTTP
+        dir: in
+        action: allow
+        protocol: TCP
+        localport: 80

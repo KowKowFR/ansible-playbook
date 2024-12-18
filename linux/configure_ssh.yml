@@ -1,0 +1,12 @@
+- name: Configure SSH on all Linux servers
+  hosts: all
+  tasks:
+    - name: Set SSH to use custom port
+      ansible.builtin.lineinfile:
+        path: /etc/ssh/sshd_config
+        line: "Port 2222"
+        state: present
+      - name: Restart SSH service
+      ansible.builtin.systemd:
+        name: sshd
+        state: restarted
